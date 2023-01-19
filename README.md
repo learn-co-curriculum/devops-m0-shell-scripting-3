@@ -54,7 +54,7 @@ In general, the operators you can use to compare are very easy to memorize; they
 | -lt  |   **l**ess **t**han   |
 | -le  |   **l**ess than or **e**qual to   |
 | &&   |   AND |
-| \|\| |OR|
+|  \|  | OR |
 
 So if you want to find out whether a variable or number is less than or equal to another variable or number, you can do:
 
