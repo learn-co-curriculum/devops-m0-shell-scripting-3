@@ -53,8 +53,8 @@ In general, the operators you can use to compare are very easy to memorize; they
 | -ge  |   **g**reater than or **e**qual to   |
 | -lt  |   **l**ess **t**han   |
 | -le  |   **l**ess than or **e**qual to   |
-| &&   |   AND |
-|  \|  |   OR |
+| &&   |   AND  |
+|  \|  |   OR  |
 | ==   |   equal (used for strings) |
 
 So if you want to find out whether a variable or number is less than or equal to another variable or number, you can do:
