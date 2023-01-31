@@ -54,13 +54,14 @@ In general, the operators you can use to compare are very easy to memorize; they
 | -lt  |   **l**ess **t**han   |
 | -le  |   **l**ess than or **e**qual to   |
 | &&   |   AND |
-|  \|  | OR |
+|  \|  |   OR |
+| ==   |   equal (used for strings) |
 
 So if you want to find out whether a variable or number is less than or equal to another variable or number, you can do:
 
 `if [[ $number1 -le $number2 ]]`
 
-In the case of strings, these compare in ASCII alphabetical order; for example, `if [[ "apple" -lt "carrot" ]]` will always evaluate to true because `a` comes before `c` alphabetically.
+In the case of strings, these compare in ASCII alphabetical order; for example, `if [[ "apple" -lt "carrot" ]]` will always evaluate to true because `a` comes before `c` alphabetically. However, something to keep in mind when comparing stings, is that you should use the `==` operator instead of `-eq` in order to 
 
 In order to chain these, you can use the `&&` and `||` operators for AND and OR respectively:
 
