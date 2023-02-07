@@ -93,7 +93,7 @@ In this case, we have a sequence of numbers 1-5, and the for-loop goes through e
 
 In each iteration of the loop, `i` gets set to the current element in the sequence. Running that block of code would output each number in a separate line. You can gave `i` whatever name you want, although `i` is customary (stands for index).
 
-> You can also use the `seq` command to generate a sequence of numbers, for example `for i in $(seq 1 20)` to iterate from 1 to 20.
+> You can also specify a range using the `{x..y}` format, e.g: `for i in {1..5}`
 
 You can get pretty creative with it! For example, let's make a simple script that goes through every file in a folder and prints out whether it's called `target.txt`:
 
