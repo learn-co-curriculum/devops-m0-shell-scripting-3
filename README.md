@@ -70,13 +70,25 @@ In order to chain these, you can use the `&&` and `||` operators for AND and OR 
 # Ask user for age
 echo "Please enter your age:"
 read age
-if [[ $age -ge 18 ]] && [[ $age -le 60 ]]
+if [[ $age -ge 18 && $age -le 60 ]]
 then
 	echo "Within age range!"
 else
 	echo "Outside age range!"
 fi
 ```
+
+You can also wrap the conditions in parentheses `()` to prioritize what is inside those parenthesis first, e.g:
+
+```bash
+if [[ ($age -ge 18 && $age -le 60 && $name == "John") || $age -gt 60 ]]
+```
+
+The above example checks the following:
+
+- Age is greater than 18, less than or equal to 60, and the name is `John`
+OR
+- Age is greater than 60
 
 ## For
 
