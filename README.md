@@ -105,7 +105,18 @@ In this case, we have a sequence of numbers 1-5, and the for-loop goes through e
 
 In each iteration of the loop, `i` gets set to the current element in the sequence. Running that block of code would output each number in a separate line. You can gave `i` whatever name you want, although `i` is customary (stands for index).
 
-> You can also specify a range using the `{x..y}` format, e.g: `for i in {1..5}`
+The `seq` (sequence) command is also available for use here to help generate less verbose sequences. For example, instead of manually typing `1 2 3 4 5`, you can do `$(seq 1 5)` and it would use the range generated there. It's very useful for long ranges of numbers (e.g. 1-1000), and for using your own variables:
+
+```bash
+# Ask user for how many times to echo
+read -p "How many times would you like to echo? " number
+
+# Echo the amount of times the user inputted
+for i in $(seq 1 $number)
+do
+	echo $i
+done
+```
 
 You can get pretty creative with it! For example, let's make a simple script that goes through every file in a folder and prints out whether it's called `target.txt`:
 
@@ -247,6 +258,38 @@ If you type any option number and hit enter, it'll run the code under the `proce
 This means that right after running the specific option code, it'll go right back to the menu. The only exception here is the fourth option, because we explicitly call `exit`. Running `exit` will quit out of our shell script session.
 
 This is a relatively common design pattern for scripts that present the user with multiple options that are not mutually exclusive. So if your script lets the user choose multiple options (often repeatable), this is a good way of handling it!
+
+## Shorthand
+
+You can also decrease the amount of lines it takes to write any of these control flow statements with the `; then` syntax:
+
+```bash
+# BEFORE
+if [[ $age -ge 18 ]]
+then
+	...
+fi
+
+# AFTER
+if [[ $age -ge 18 ]]; then
+	...
+fi
+```
+
+You can replace `then` with `do` for looping, and make the statements even more concise by compacting them into a single line:
+
+```bash
+# BEFORE
+for i in $(seq 1 $end)
+do
+	echo $i
+done
+
+# AFTER
+for i in $(seq 1 $end); do echo $i; done
+```
+
+There's no real reason to use one over the other, so simply pick the one that makes the most sense to you. In general, multi-line sections are easier to read, but they're sometimes a little too verbose. Use your own judgement to decide which is appropriate.
 
 ## Conclusion
 
