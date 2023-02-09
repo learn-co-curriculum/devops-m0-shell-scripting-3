@@ -132,6 +132,34 @@ do
 done
 ```
 
+You can also nest loops as necessary:
+
+```bash
+for i in $(seq 1 $number)
+do
+	for j in $(seq 1 $i)
+	do
+		echo $j
+	done
+done
+```
+
+> Nesting too many loops can drastically increase program runtime complexity (how tough on the CPU your script is), so try to favor solutions that don't need nesting.
+
+Note how we used `j` instead of `i` in the second iteration of the loop; this is so that `i` does not get overwritten in the second loop in case we need it. `i` and `j` are simply conventions, you can technically use whatever variable name you want here, though you will usually see `i` for the outermost loop, `j` for the first nested one, and `k` for the second nested one. If they're not nested (i.e. they're both outermost loops, just next to each other), you can reuse the variable names:
+
+```bash
+for i in $(seq 1 30)
+do
+	echo $i
+done
+
+for i in $(seq 1 15)
+do
+	echo $i
+done
+```
+
 ## While
 
 The **while-loop** is very similar to the for-loop; all it does is execute a block of code repeatedly as long as a certain condition is met. For example:
