@@ -18,7 +18,7 @@ The `if` statement is the simplest of the bunch; simply execute some code based 
 ```bash
 #!/bin/bash
 
-number = 10
+number=10
 
 # Checks if number is equal to 7
 if [[ $number -eq 7 ]] 
@@ -55,7 +55,7 @@ In general, the operators you can use to compare are very easy to memorize; they
 | -le  |   **l**ess than or **e**qual to   |
 | &&   |   AND  |
 |  \|  |   OR  |
-| ==   |   equal (used for strings) |
+| ==   |   equal (used for strings and booleans) |
 
 So if you want to find out whether a variable or number is less than or equal to another variable or number, you can do:
 
@@ -89,6 +89,22 @@ The above example checks the following:
 - Age is greater than 18, less than or equal to 60, and the name is `John`
 OR
 - Age is greater than 60
+
+Lastly, you can use `if` statements to also evaluate boolean values (true or false). For instance:
+
+```bash
+isSenior=false
+
+if [[ $age -gt 65 ]]
+then
+	isSenior=true
+fi
+
+if [[ $isSenior == true ]]
+then
+	echo "Is a senior!"
+fi
+```
 
 ## For
 
