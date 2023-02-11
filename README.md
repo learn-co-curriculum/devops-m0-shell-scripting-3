@@ -335,6 +335,26 @@ for i in $(seq 1 $end); do echo $i; done
 
 There's no real reason to use one over the other, so simply pick the one that makes the most sense to you. In general, multi-line sections are easier to read, but they're sometimes a little too verbose. Use your own judgement to decide which is appropriate.
 
+## Break
+
+Another interesting statement you can use to control the flow of your scripts are `break` statements.
+
+**Break** statements simply exits a loop prematurely; when the statement is reached, the current loop is terminated and the program continues with the statement right after the loop.
+
+For example, if you want to exit a loop when a number is divisible by 10, you could do something like:
+
+```bash
+max=25
+for i in $(seq 11 $max); do
+	echo $i
+	if [[ $(expr $i % 10) -eq 0 ]]; then
+		break
+	fi
+done
+```
+
+That script will simply output the numbers 11-20, each on a separate line.
+
 ## Conclusion
 
 Now you're finally ready to make your own shell scripts! This lesson was a bit more complex than the previous ones, but with enough practice, all these concepts will click in just fine.
