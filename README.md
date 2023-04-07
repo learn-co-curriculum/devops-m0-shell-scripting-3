@@ -106,6 +106,25 @@ then
 fi
 ```
 
+You can also use `elif` (else-if) for when you want to check another condition once the first one fails, e.g:
+
+```bash
+if [[ $age -gt 65 ]]
+then
+	echo "Is senior!"
+elif [[ $age -gt 45 ]]
+then
+	echo "Is middle-aged!"
+elif [[ $age -gt 21 ]]
+then
+	echo "Is adult!"
+else
+	echo "Is minor!"
+fi
+```
+
+Note that you still have to use `then` after each `elif`, but not for the last `else`.
+
 ## For
 
 The **for-loop** allows you to iterate over a sequence of values, such as the lines in a file or a list of numbers. Let's say you want to execute a block of code five times, you could do something like:
